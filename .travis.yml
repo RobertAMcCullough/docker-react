@@ -1,6 +1,12 @@
+language: generic
 sudo: required
 services:
   - docker
 
 before_install:
   - docker built -t react_test_image  -f Dockerfile.dev .
+
+script:
+  - docker run -e CI=true react_test_image npm run test 
+  #CI env variable tells the test suite not to watch and wait for more input
+  
