@@ -13,7 +13,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learp React
+          Learp React (learpy)
         </a>
       </header>
     </div>
