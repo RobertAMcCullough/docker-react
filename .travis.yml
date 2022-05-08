@@ -10,3 +10,14 @@ script:
   - docker run -e CI=true react_test_image npm run test 
   #CI env variable tells the test suite not to watch and wait for more input
   
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-1"
+  app: "docker-react"
+  env: "Dockerreact-env"
+  bucketname: "elasticbeanstalk-us-east-1-674915818787"
+  path: "docker-react"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
